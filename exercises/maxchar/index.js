@@ -22,4 +22,12 @@ function maxChar(str) {
   return maxChar;
 
 }
+
+function maxChar(str) {
+  const obj = {};
+  str.split('').forEach(char => obj[char] + 1 || 1);
+  return Object.keys(obj).reduce((prev, next) => obj[a] >= obj[b] ? a : b);
+}
+
+
 module.exports = maxChar;
