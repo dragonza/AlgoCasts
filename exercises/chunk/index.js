@@ -32,14 +32,15 @@
 
 function chunk(array, size) {
     const chunked = [];
-    const last = chunked[chunked.length - 1];
     for (let i = 0; i < array.length; i++) {
+      const last = chunked[chunked.length - 1];
       if (!last || last.length === size) {
         chunked.push([array[i]])
       } else {
         last.push(array[i]);
       }
     }
+    return chunked;
 }
 
 
