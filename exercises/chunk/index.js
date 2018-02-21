@@ -10,8 +10,8 @@
 
 // function chunk(array, size) {
 //   const chunked_arr = [];
-//   const copied = [...array];
-//   let numOfChild = Math.ceil(copied.length / size);
+//   let copied = [...array];
+//   const numOfChild = Math.ceil(copied.length / size);
 //   for (let i = 0; i < numOfChild; i++) {
 //     chunked_arr.push(copied.splice(0, size));
 //   }
@@ -31,17 +31,28 @@
 
 
 function chunk(array, size) {
-    const chunked = [];
+    const chunked_arr = [];
     for (let i = 0; i < array.length; i++) {
-      const last = chunked[chunked.length - 1];
+      const last = chunked_arr[chunked_arr.length - 1];
       if (!last || last.length === size) {
-        chunked.push([array[i]])
+        chunked_arr.push([array[i]]);
       } else {
         last.push(array[i]);
       }
     }
-    return chunked;
+    return chunked_arr;
 }
 
+
+
+function chunk(array, size) {
+  if (!array) return [];
+  const firstChunk = array.slice(0, size);
+  if (!firstChunk.length) {
+    return array;
+  }
+  return [firstChunk].concat(chunk(array.slice(size, array.length), size));
+
+}
 
 module.exports = chunk;
