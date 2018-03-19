@@ -19,3 +19,8 @@ test('returns the number of vowels used', () => {
 test('returns the number of vowels used', () => {
   expect(vowels('bcdfghjkl')).toEqual(0);
 });
+
+
+test('returns the number of vowels used', () => {
+  expect(vowels('Why do you ask')).toEqual(4);
+});
