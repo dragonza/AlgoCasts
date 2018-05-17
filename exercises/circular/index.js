@@ -12,6 +12,20 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+function circular(list) {
+    let fast = list.getFirst();
+    let slow = list.getFirst();
+
+    while (fast.next && fast.next.next) {
+        fast = fast.next.next;
+        slow = slow.next;
+
+        if (fast === slow) { // compare reference of the object not data
+            return true;
+        }
+    }
+
+    return false;
+}
 
 module.exports = circular;
