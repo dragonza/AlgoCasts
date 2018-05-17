@@ -43,8 +43,6 @@ function chunk(array, size) {
     return chunked_arr;
 }
 
-
-
 function chunk(array, size) {
   if (!array) return [];
   const firstChunk = array.slice(0, size);

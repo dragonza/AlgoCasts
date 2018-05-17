@@ -19,6 +19,7 @@ function memoize(fn) {
         return result;
     }
 }
+
 // function fib(n) {
 //     const result = [0, 1];
 //     for (let i = 2; i <= n;i ++) {
@@ -37,3 +38,5 @@ function slowFib(n) {
 
 const fib = memoize(slowFib);
 module.exports = fib;
+
+const a = memo(() => {});
